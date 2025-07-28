@@ -1,0 +1,171 @@
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #00324b;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding: 1rem 0;
+    box-sizing:border-box;
+    z-index: 100;
+}
+
+.sidebar .boton-cerrar {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    display: block;
+    padding: 0;
+    line-height: 1.5rem;
+    margin: 0;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.sidebar ul, .sidebar li{
+    margin:0;
+    padding:0;
+    list-style:none inside;
+}
+
+.sidebar ul {
+    margin: 4rem auto;
+    display: block;
+    width: 80%;
+    min-width:200px;
+}
+
+.sidebar a {
+    display: block;
+    font-size: 120%;
+    color: #eee;
+    text-decoration: none;
+    
+}
+
+.sidebar a:hover{
+    color:#fff;
+    background-color: #f90;
+
+}
+
+h1 {
+    color:#f90;
+    font-size:180%;
+    font-weight:normal;
+}
+#contenido {
+    transition: margin-left .4s;
+    padding: 1rem;
+}
+
+.abrir-cerrar {
+    color: #2E88C7;
+    font-size:1rem;
+    z-index: 100;   
+}
+
+#abrir {
+    
+}
+#cerrar {
+    display:none;
+}
+ input#abrir-cerrar { 
+            visibility:hidden;
+            position: fixed;
+                 
+        }
+        
+        .toggle-button {
+            display:block;
+            width:50px;
+            height:50px;
+            border:1px solid white;
+            position:fixed;
+            cursor: pointer;
+            box-sizing: border-box;
+            margin-top:20px;
+            margin-left:30px;
+            z-index: 100;  
+        }
+
+        /* Usamos los :before y :after del label para dibujar las tres rayitas */
+        
+        .toggle-button:before, .toggle-button:after {
+            position:absolute;
+            display:block;
+            content:" ";
+            width: calc(100% / 2);               
+            box-sizing: border-box;
+            left: calc(100% / 4);
+            transition: all 0.1s ease-out;
+        }
+
+        .toggle-button:before {
+            top: calc(100% / 4);
+            height:calc(100% / 4);
+            border-top:1px solid white;
+            border-bottom:1px solid white;
+            background-color: transparent;
+        }
+
+        .toggle-button:after {
+            height:1px;
+            background-color:white;
+            bottom:calc(100% / 4);
+        }
+
+        /* Hacemos clic y el input queda como :checked, así que los centramos y giramos 45º en distinto sentido */
+
+        input#abrir-cerrar:checked + .toggle-button:before, input#abrir-cerrar:checked + .toggle-button:after {
+            top:calc(100% / 2);
+            height:1px;
+            border-bottom:0;
+        }
+
+        input#abrir-cerrar:checked + .toggle-button:before {
+            transform: rotate(45deg); 
+        }
+
+        input#abrir-cerrar:checked + .toggle-button:after {
+            transform: rotate(-45deg);
+        }
+        
+        /* Posicionamos y mostramos cuando procede los <span> que nos ayudarán con los tooltips */
+
+        .abrir, .cerrar { 
+            position:absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            text-indent: -9999px;
+        }
+        
+        .abrir {
+            display:block;
+        }
+
+        .cerrar {
+            display:none;
+        }
+
+        input#abrir-cerrar:checked + .toggle-button .abrir {
+            display:none;
+        }
+
+        input#abrir-cerrar:checked + .toggle-button .cerrar {
+            display:block;
+        }      
+
+        #botonderecha{
+            transition: all 0.4s;
+            left: 0px;
+        }
